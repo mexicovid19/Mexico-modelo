@@ -443,8 +443,8 @@ if __name__ == "__main__":
     if save_:
 
         ## Saving results to csv ##
-        CSV.to_csv( CSV_PATH+'covid19_mex_proyecciones_{}.csv'.format( today_date) )
-
+        # CSV.to_csv( CSV_PATH+'covid19_mex_proyecciones_{}.csv'.format( today_date) )
+        CSV.to_csv( CSV_PATH+'covid19_mex_proyecciones.csv' )
         ## Plotting ##
         plt.figure( figsize=(10,8) )
         # containtment scenario 1
