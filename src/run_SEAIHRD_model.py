@@ -366,7 +366,7 @@ if __name__ == "__main__":
 
         # model projection setup
         tc = 6 # containtment intervention date (days since initial_date)
-        projection_horizon = 4 # days
+        projection_horizon = 3 # days
         # number of days to run the model for
         n_days = (datetime.datetime.today() - datetime.datetime.strptime(initial_date, '%Y-%m-%d')).days + projection_horizon
 
