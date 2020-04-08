@@ -452,12 +452,12 @@ if __name__ == "__main__":
         df_ = total_cases_scenarios_to_csv(None, mex_confirmed, scenarios, initial_date, f=TotalCases, R0_index=R0ix)
         CSV = CSV.join(df_, how='outer')
 
-        # Save individual runs with all the compartiments
-        if save_:
-            today_date = datetime.datetime.today().strftime('%d-%m-%y')
-            scenario_to_csv(CSV_PATH+'other/susana_00_{}_R0_{}.csv'.format( today_date, str(R_0).replace('.','p')), projections_susana1, initial_date)
-            scenario_to_csv(CSV_PATH+'other/susana_20_{}_R0_{}.csv'.format( today_date, str(R_0).replace('.','p')), projections_susana2, initial_date)
-            scenario_to_csv(CSV_PATH+'other/susana_50_{}_R0_{}.csv'.format( today_date, str(R_0).replace('.','p')), projections_susana3, initial_date)
+        # Save individual runs with all the compartiments. Not well calibrated for Mexico
+        # if save_:
+        #     today_date = datetime.datetime.today().strftime('%d-%m-%y')
+        #     scenario_to_csv(CSV_PATH+'other/susana_00_{}_R0_{}.csv'.format( today_date, str(R_0).replace('.','p')), projections_susana1, initial_date)
+        #     scenario_to_csv(CSV_PATH+'other/susana_20_{}_R0_{}.csv'.format( today_date, str(R_0).replace('.','p')), projections_susana2, initial_date)
+        #     scenario_to_csv(CSV_PATH+'other/susana_50_{}_R0_{}.csv'.format( today_date, str(R_0).replace('.','p')), projections_susana3, initial_date)
 
     ## Creating dataframe with scenarios and error bars ##
     Data = national_timeseries(mex_confirmed)
