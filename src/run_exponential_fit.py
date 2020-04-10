@@ -41,7 +41,7 @@ if __name__ == "__main__":
     save_ = True
 
     # Fit time window
-    n_days = 10
+    n_days = 7
     total_cases_timeseries = national_timeseries(mex_confirmed).iloc[-n_days:,0]
 
     # Data preparation
