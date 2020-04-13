@@ -77,13 +77,16 @@ if __name__ == "__main__":
     CSV = Data.join(pd.Series( np.round(yfit), tfit, name='Fit'), how='outer' )
     CSV = CSV.join(pd.Series( np.round(yfit_min), tfit[-(forecast_horizon+1):], name='Fit_min'), how='outer' )
     CSV = CSV.join(pd.Series( np.round(yfit_max), tfit[-(forecast_horizon+1):], name='Fit_max'), how='outer' )
+    CSV.index.rename('Fecha', inplace=True)
+    print(CSV)
+    
 
     # Plotting
     plt.figure( figsize=(10,8) )
     # plot data
     plt.plot(trange, ydata, lw=0, marker='o', ms=8)
     # plot fit
-    plt.plot(tfit, yfit, c='orange')
+    plt.plot(tfit, yfit, c='orange', label='tasa esperada: {} % diario'.format( np.round(popt[1]*100 ,1)) )
     # error cones
     plt.fill_between(tfit[-(forecast_horizon+1):], yfit_min, yfit_max,
                          alpha=0.2, color='orange');
