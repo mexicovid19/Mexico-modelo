@@ -77,6 +77,9 @@ if __name__ == "__main__":
     CSV = Data.join(pd.Series( np.round(yfit), tfit, name='Fit'), how='outer' )
     CSV = CSV.join(pd.Series( np.round(yfit_min), tfit[-(forecast_horizon+1):], name='Fit_min'), how='outer' )
     CSV = CSV.join(pd.Series( np.round(yfit_max), tfit[-(forecast_horizon+1):], name='Fit_max'), how='outer' )
+    CSV.index.rename('Fecha', inplace=True)
+    print(CSV)
+    
 
     # Plotting
     plt.figure( figsize=(10,8) )
