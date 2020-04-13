@@ -83,7 +83,7 @@ if __name__ == "__main__":
     # plot data
     plt.plot(trange, ydata, lw=0, marker='o', ms=8)
     # plot fit
-    plt.plot(tfit, yfit, c='orange')
+    plt.plot(tfit, yfit, c='orange', label='tasa esperada: {} % diario'.format( np.round(popt[1]*100 ,1)) )
     # error cones
     plt.fill_between(tfit[-(forecast_horizon+1):], yfit_min, yfit_max,
                          alpha=0.2, color='orange');
